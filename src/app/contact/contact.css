@@ -1,0 +1,45 @@
+.contact-section {
+  background: linear-gradient(to right, #f8f9fa, #eef2f7);
+}
+
+.divider {
+  width: 80px;
+  height: 4px;
+  background: #ffc107;
+  border-radius: 10px;
+  margin-top: 10px;
+}
+
+.contact-form {
+  background: #fff;
+  border-radius: 15px;
+}
+
+.contact-info {
+  background: linear-gradient(135deg, #212529, #343a40);
+  border-radius: 15px;
+}
+
+.custom-input {
+  border-radius: 10px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  transition: 0.3s;
+}
+
+.custom-input:focus {
+  border-color: #ffc107;
+  box-shadow: 0 0 5px rgba(255,193,7,0.5);
+}
+
+.info-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.info-item i {
+  font-size: 18px;
+  color: #ffc107;
+}

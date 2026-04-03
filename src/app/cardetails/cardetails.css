@@ -1,0 +1,32 @@
+.detail-img {
+  height: 400px;
+  object-fit: cover;
+  transition: 0.4s;
+}
+
+.card:hover .detail-img {
+  transform: scale(1.05);
+}
+
+.spec-box {
+  background: #f8f9fa;
+  padding: 15px;
+  border-radius: 10px;
+  text-align: center;
+  transition: 0.3s;
+}
+
+.spec-box small {
+  color: gray;
+  font-size: 12px;
+}
+
+.spec-box p {
+  margin: 0;
+  font-weight: 600;
+}
+
+.spec-box:hover {
+  background: #e9ecef;
+  transform: translateY(-3px);
+}

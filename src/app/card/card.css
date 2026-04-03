@@ -1,0 +1,20 @@
+.premium-card {
+  border-radius: 15px;
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.premium-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+}
+
+.premium-img {
+  height: 220px;
+  object-fit: cover;
+  transition: 0.4s;
+}
+
+.premium-card:hover .premium-img {
+  transform: scale(1.1);
+}

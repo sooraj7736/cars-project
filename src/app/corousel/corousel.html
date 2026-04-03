@@ -1,0 +1,40 @@
+<div id="carCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-wrap="true">
+
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carCarousel" data-bs-slide-to="0" class="active"></button>
+    <button type="button" data-bs-target="#carCarousel" data-bs-slide-to="1"></button>
+    <button type="button" data-bs-target="#carCarousel" data-bs-slide-to="2"></button>
+  </div>
+
+  
+ <div class="carousel-inner">
+  @for (item of cars; track item.id; let i = $index) {
+    <div class="carousel-item" [class.active]="i === 0">
+      <img [src]="item.image" class="d-block w-100" style="height:500px; object-fit:cover;">
+      
+      <div class="carousel-caption d-none d-md-block">
+        <h2 class="fw-bold">{{ item.name }}</h2>
+        <p>{{ item.description }}</p>
+
+        <!-- FIXED routerLink -->
+        <a [routerLink]="['/cars/car-details', item.id]" class="btn btn-warning">
+          Browse Cars
+        </a>
+      </div>
+    </div>
+  }
+</div>
+    
+
+    
+  
+
+  <button class="carousel-control-prev" type="button" data-bs-target="#carCarousel" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </button>
+
+  <button class="carousel-control-next" type="button" data-bs-target="#carCarousel" data-bs-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </button>
+
+</div>
