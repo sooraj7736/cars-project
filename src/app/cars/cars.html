@@ -1,8 +1,8 @@
 <div class="container d-flex justify-content-around flex-wrap">
   @for (item of cars; track item.id) {
-    <app-card [cars]="item" class="my-5"></app-card>
-}
-@empty {
-    <p>No cars found</p>
-}
+  <app-card [cars]="item" class="my-5"></app-card>
+  }
+  @empty {
+  <p>No cars found</p>
+  }
 </div>

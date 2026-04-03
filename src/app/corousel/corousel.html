@@ -1,4 +1,4 @@
-<div id="carCarousel" class="carousel slide" data-bs-ride="carousel">
+<div id="carCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-wrap="true">
 
   <div class="carousel-indicators">
     <button type="button" data-bs-target="#carCarousel" data-bs-slide-to="0" class="active"></button>
@@ -6,36 +6,28 @@
     <button type="button" data-bs-target="#carCarousel" data-bs-slide-to="2"></button>
   </div>
 
-  <div class="carousel-inner">
-
-    <div class="carousel-item active">
-      <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70" class="d-block w-100" style="height:500px; object-fit:cover;">
+  
+ <div class="carousel-inner">
+  @for (item of cars; track item.id; let i = $index) {
+    <div class="carousel-item" [class.active]="i === 0">
+      <img [src]="item.image" class="d-block w-100" style="height:500px; object-fit:cover;">
+      
       <div class="carousel-caption d-none d-md-block">
-        <h2 class="fw-bold">Find Your Dream Car</h2>
-        <p>Explore top deals on premium and budget cars</p>
-        <a routerLink="/cars" class="btn btn-warning">Browse Cars</a>
+        <h2 class="fw-bold">{{ item.name }}</h2>
+        <p>{{ item.description }}</p>
+
+        <!-- FIXED routerLink -->
+        <a [routerLink]="['/cars/car-details', item.id]" class="btn btn-warning">
+          Browse Cars
+        </a>
       </div>
     </div>
+  }
+</div>
+    
 
-    <div class="carousel-item">
-      <img src="https://images.unsplash.com/photo-1549924231-f129b911e442" class="d-block w-100" style="height:500px; object-fit:cover;">
-      <div class="carousel-caption d-none d-md-block">
-        <h2 class="fw-bold">Sell Your Car Easily</h2>
-        <p>Get the best price with zero hassle</p>
-        <a routerLink="/sell-car" class="btn btn-warning">Sell Now</a>
-      </div>
-    </div>
-
-    <div class="carousel-item">
-      <img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d" class="d-block w-100" style="height:500px; object-fit:cover;">
-      <div class="carousel-caption d-none d-md-block">
-        <h2 class="fw-bold">Compare & Choose</h2>
-        <p>Compare features and pick the best car for you</p>
-        <a routerLink="/compare" class="btn btn-warning">Compare Cars</a>
-      </div>
-    </div>
-
-  </div>
+    
+  
 
   <button class="carousel-control-prev" type="button" data-bs-target="#carCarousel" data-bs-slide="prev">
     <span class="carousel-control-prev-icon"></span>

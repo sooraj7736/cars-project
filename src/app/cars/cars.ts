@@ -1,6 +1,7 @@
-import { ChangeDetectorRef, Component } from '@angular/core';
+import { ChangeDetectorRef, Component, Input } from '@angular/core';
 import { Apiservice } from '../apiservice';
 import { Card } from '../card/card';
+
 
 
 
@@ -13,11 +14,19 @@ import { Card } from '../card/card';
 })
 export class Cars {
   cars: any[] = [];
+   @Input() limit: number | null = null;
   constructor(private apiservice: Apiservice,private cdr : ChangeDetectorRef) { }
   ngOnInit() {
+    
     this.apiservice.getproducts().subscribe((data : any) => {
-      this.cars = data;
-      this.cdr.detectChanges();
+      if (this.limit) {
+        this.cars = data.slice(0, this.limit);
+        this.cdr.detectChanges();
+      } else {
+        this.cars = data;
+        this.cdr.detectChanges();
+      }
+      
     });
   }
 }

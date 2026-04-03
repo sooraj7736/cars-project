@@ -1,58 +1,84 @@
-<div class="container mt-5">
-    <div class="row">
+<div class="container my-5">
 
-        <div class="col-md-6 mb-4">
-            <img [src]="cars.image" alt="Car Image" 
-                class="img-fluid rounded mb-3" 
-                style="height:350px; object-fit:cover; width:100%;">
-        </div>
+    <div class="row g-5">
 
         <div class="col-md-6">
-            <h2 class="mb-3">{{ cars.name }}</h2>
+            <div class="card border-0 shadow-lg overflow-hidden">
+                <img [src]="cars.image" class="img-fluid detail-img" alt="{{ cars.name }}">
+            </div>
+        </div>
+
+
+        <div class="col-md-6">
+
+            <h2 class="fw-bold mb-2">{{ cars.name }}</h2>
+
+            <p class="text-muted mb-3">
+                {{ cars.year }} • {{ cars.brand }}
+            </p>
+
+
+            <h3 class="text-success fw-bold mb-3">
+                ₹ {{ cars.price }}
+            </h3>
 
             <div class="mb-3">
-                <span class="h4 text-success">₹ {{ cars.price }}</span>
+                ⭐⭐⭐⭐☆ <span class="text-muted ms-2">4.5 Rating • Trusted Seller</span>
             </div>
 
-            <div class="mb-3 text-muted">
-                 4.5 Rating • Trusted Seller
+
+            <p class="text-secondary mb-4">
+                {{ cars.description }}
+            </p>
+
+
+            <div class="row g-3 mb-4">
+
+                <div class="col-6">
+                    <div class="spec-box">
+                        <small>Fuel Type</small>
+                        <p>{{ cars.fuel_type }}</p>
+                    </div>
+                </div>
+
+                <div class="col-6">
+                    <div class="spec-box">
+                        <small>Transmission</small>
+                        <p>{{ cars.transmission }}</p>
+                    </div>
+                </div>
+
+                <div class="col-6">
+                    <div class="spec-box">
+                        <small>Kilometers</small>
+                        <p>{{ cars.km_driven }} km</p>
+                    </div>
+                </div>
+
+                <div class="col-6">
+                    <div class="spec-box">
+                        <small>Location</small>
+                        <p>{{ cars.location }}</p>
+                    </div>
+                </div>
+
             </div>
 
-            <p class="mb-4">{{ cars.description }}</p>
 
-            <div class="mb-3">
-                <strong>Brand:</strong> {{ cars.brand }}
+            <div class="d-flex gap-3">
+
+                <button class="btn btn-warning btn-lg flex-fill">
+                    Contact Seller
+                </button>
+
+                <button class="btn btn-outline-dark btn-lg flex-fill">
+                    Save
+                </button>
+
             </div>
-
-            <div class="mb-3">
-                <strong>Year:</strong> {{ cars.year }}
-            </div>
-
-            <div class="mb-3">
-                <strong>Fuel Type:</strong> {{ cars.fuel_type }}
-            </div>
-
-            <div class="mb-3">
-                <strong>Transmission:</strong> {{ cars.transmission }}
-            </div>
-
-            <div class="mb-3">
-                <strong>Kilometers Driven:</strong> {{ cars.km_driven }} km
-            </div>
-
-            <div class="mb-4">
-                <strong>Location:</strong> {{ cars.location }}
-            </div>
-
-            <button class="btn btn-warning btn-lg mb-3 me-2">
-                 Contact Seller
-            </button>
-
-            <button class="btn btn-outline-primary btn-lg mb-3">
-                Save Car
-            </button>
 
         </div>
 
     </div>
+
 </div>

@@ -1,0 +1,27 @@
+# 🔥 Node modules (NEVER upload)
+node_modules/
+
+# 🔥 Angular build output
+dist/
+
+# 🔥 Angular cache
+.angular/
+.cache/
+
+# 🔥 Logs
+npm-debug.log
+yarn-error.log
+
+# 🔥 System files
+.DS_Store
+Thumbs.db
+
+# 🔥 Environment files
+.env
+
+# 🔥 IDE files
+.vscode/
+.idea/
+
+# 🔥 GitHub Pages cache (IMPORTANT for your error)
+node_modules/.cache/
