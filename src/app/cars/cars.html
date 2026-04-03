@@ -1,6 +1,8 @@
 <div class="container">
+  @if(cars.length > 6){
   <h1 class="my-4 text-center">Explore Our Premium Car Collection</h1>
   <p class="text-center text-muted mb-5">Discover the finest selection of cars, handpicked for quality and performance. Browse our collection and find your perfect match.</p>
+  }
   <div class="d-flex flex-wrap justify-content-center">
 
     @for (item of cars; track item.id){
