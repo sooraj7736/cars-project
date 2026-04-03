@@ -1,0 +1,29 @@
+<div class="card h-100 shadow-sm" style="width: 18rem; margin:10px;">
+
+    <img [src]="cars.image" class="card-img-top img-fluid" alt="{{ cars.name }}"
+        style="height:200px; object-fit:cover;">
+
+    <div class="card-body d-flex flex-column">
+
+        <h5 class="card-title text-truncate">
+            {{ cars.name }}
+        </h5>
+
+        <p class="card-text small flex-grow-1 overflow-auto">
+            {{ cars.description }}
+        </p>
+
+        <p class="fw-bold text-success mb-2">
+            ₹ {{ cars.price }}
+        </p>
+
+        <p class="text-muted small mb-3">
+            {{ cars.fuel_type }} • {{ cars.transmission }} • {{ cars.year }}
+        </p>
+
+        <button [routerLink]="['/cars/car-details', cars.id]" class="btn btn-primary w-100 mt-auto">
+            View Details
+        </button>
+
+    </div>
+</div>
